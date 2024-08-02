@@ -1,41 +1,52 @@
-body {
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.6;
-    background-color: #a09f9f;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.profile-container {
-    position: relative;
-    display: inline-block;
-    width: 810px; 
-    height: 225px; 
-    background-image: url('background.jpg'); 
-    background-size: cover;
-    background-position: center;
-    
-    overflow: hidden;
-}
-.profilePic-img {
-    width: 300px; 
-    height: 225px;
-     border-radius: 50%;
-    transition: transform 0.75s ease, box-shadow 0.75s ease;
-}
-.profilePic-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(27, 211, 88, 0.8); 
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #a09f9f;
 }
 
+.profile-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profilePic-img {
+    width: 350px;
+    height: 250px;
+    border-radius: 50%;
+    transition: transform 0.75s ease, box-shadow 0.75s ease;
+    border: 5px solid #fff;
+}
+
+.profilePic-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(27, 211, 88, 0.8);
+}
 
 .container {
     width: 80%;
-    margin: auto;
-    overflow: hidden;
+    margin: 30px auto;
     padding: 20px;
     background: rgb(101, 146, 101);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 header, section {
@@ -46,10 +57,14 @@ header h1 {
     margin: 0;
     padding-bottom: 10px;
     border-bottom: 1px solid #333;
+    text-align: center;
+    color: #fff;
 }
 
 header p {
     margin: 5px 0;
+    text-align: center;
+    color: #fff;
 }
 
 h2 {
@@ -57,7 +72,6 @@ h2 {
     border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
     text-decoration: underline;
-
 }
 
 h3 {
@@ -74,4 +88,47 @@ ul li {
     margin: 5px 0;
     padding: 10px;
     border-left: 5px solid #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    color: hsla(211, 94%, 28%, 0.822);
+    text-decoration: none;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+a:hover {
+    transform: scale(1.1);
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+strong {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-container {
+        height: 250px;
+    }
+
+    .profilePic-img {
+        width: 120px;
+        height: 120px;
+    }
 }
